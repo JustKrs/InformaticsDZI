@@ -6,7 +6,7 @@ namespace _1._2._24
     {
         static void Main(string[] args)
         {
-
+            Console.WriteLine("new");
 
         }
     }
