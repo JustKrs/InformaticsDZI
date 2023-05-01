@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace _1._2._25
+namespace _1._2._26
 {
     internal class Program
     {
@@ -12,15 +12,14 @@ namespace _1._2._25
             int c = int.Parse(Console.ReadLine());
 
             List<int> list = new List<int>();
-
             list.Add(a);
             list.Add(b);
             list.Add(c);
 
             list.Sort();
+            list.Reverse();
 
-            Console.WriteLine(string.Join(" ", list));
-
+            Console.WriteLine(String.Join(" ", list));
         }
     }
 }
