@@ -25,29 +25,28 @@ namespace _1._2._31
     {
         static void Main(string[] args)
         {
-            int n = int.Parse(Console.ReadLine());
-            Dictionary<int, List<int>> dict = new Dictionary<int, List<int>>();
+            int n, d, m, mind, minm;
+            n = int.Parse(Console.ReadLine()); // брой на наклоните
+            m = int.Parse(Console.ReadLine()); // максимален наклон
+            d = int.Parse(Console.ReadLine()); // дължината на пътеките
 
-            for (int i = 0; i < n; i++)
+            minm = m;
+            mind = d;
+
+            for (int i = 2; i <= n; i++)
             {
-                int length = int.Parse(Console.ReadLine());
-                int maxHeight = int.Parse(Console.ReadLine());
+                m = int.Parse(Console.ReadLine());
+                d = int.Parse(Console.ReadLine());
 
-                if (!dict.ContainsKey(length))
+                if (m < minm || m == minm && d < mind)
                 {
-                    dict.Add(length, new List<int>() { maxHeight });
-                }
-                else
-                {
-                    dict[length].Add(maxHeight);
+                    minm = m;
+                    mind = d;
                 }
             }
 
-            foreach (var item in dict.OrderBy(x => x.Key).ThenBy(x => x.Value))
-            {
-                Console.WriteLine($"{item.Key} - {String.Join(", ", item.Value)}");
-                return;
-            }
+            Console.WriteLine(minm + " " + mind);
+            return;
         }
     }
 }
